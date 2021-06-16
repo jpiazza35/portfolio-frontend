@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5b0f3f49.chunk.css",
+    "main.js": "/static/js/main.36922cdc.chunk.js",
+    "main.js.map": "/static/js/main.36922cdc.chunk.js.map",
+    "runtime-main.js": "/static/js/runtime-main.04827dba.js",
+    "runtime-main.js.map": "/static/js/runtime-main.04827dba.js.map",
+    "static/js/2.9853ba99.chunk.js": "/static/js/2.9853ba99.chunk.js",
+    "static/js/2.9853ba99.chunk.js.map": "/static/js/2.9853ba99.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.735f795fd6573a2f4c9cfda3a7c431b7.js": "/precache-manifest.735f795fd6573a2f4c9cfda3a7c431b7.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/main.5b0f3f49.chunk.css.map": "/static/css/main.5b0f3f49.chunk.css.map",
+    "static/js/2.9853ba99.chunk.js.LICENSE.txt": "/static/js/2.9853ba99.chunk.js.LICENSE.txt",
+    "static/media/App.css": "/static/media/Montserrat-SemiBold.c641dbee.ttf",
+    "static/media/avatar.png": "/static/media/avatar.963722b1.png",
+    "static/media/Intro.css": "/static/media/introBG.9cdcd053.jpg",
+    "static/media/Portfolio.css": "/static/media/portfolioBG.9f803b78.jpeg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.04827dba.js",
+    "static/js/2.9853ba99.chunk.js",
+    "static/css/main.5b0f3f49.chunk.css",
+    "static/js/main.36922cdc.chunk.js"
+  ]
+}

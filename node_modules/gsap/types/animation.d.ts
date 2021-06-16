@@ -9,6 +9,7 @@ declare namespace gsap.core {
 
     data: any;
     readonly parent: Timeline | null;
+    readonly scrollTrigger?: ScrollTrigger;
 
     constructor(vars?: object, time?: number);
 
@@ -22,6 +23,7 @@ declare namespace gsap.core {
      * @param {number} value
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/delay()
      */
     delay(value: number): this;
     /**
@@ -33,6 +35,7 @@ declare namespace gsap.core {
      *
      * @returns {number} The delay value
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/delay()
      */
     delay(): number;
 
@@ -46,6 +49,7 @@ declare namespace gsap.core {
      * @param {number} value
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/duration()
      */
     duration(value: number): this;
     /**
@@ -57,6 +61,7 @@ declare namespace gsap.core {
      *
      * @returns {number} The duration
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/duration()
      */
     duration(): number;
 
@@ -69,6 +74,7 @@ declare namespace gsap.core {
      *
      * @returns {number} The end time
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/endTime()
      */
     endTime(includeRepeats?: boolean): number;
 
@@ -80,13 +86,14 @@ declare namespace gsap.core {
      * ```
      *
      * @param {CallbackType} type
-     * @param {Callback} callback
+     * @param {Callback | null} callback
      * @param {any[]} [params]
      * @param {object} [scope]
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/eventCallback()
      */
-    eventCallback(type: CallbackType, callback: Callback, params?: any[], scope?: object): this;
+    eventCallback(type: CallbackType, callback: Callback | null, params?: any[], scope?: object): this;
     /**
      * Gets the requested callback function of the animation.
      *
@@ -97,6 +104,7 @@ declare namespace gsap.core {
      * @param {CallbackType} type
      * @returns {Callback} The callback
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/eventCallback()
      */
     eventCallback(type: CallbackType): Callback;
 
@@ -109,6 +117,7 @@ declare namespace gsap.core {
      *
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/invalidate()
      */
     invalidate(): this;
 
@@ -122,6 +131,7 @@ declare namespace gsap.core {
      *
      * @returns {boolean} The active state
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/isActive()
      */
     isActive(): boolean;
 
@@ -133,11 +143,12 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number} value
-     * @param {boolean} [supressEvents]
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The tween
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/iteration()
      */
-    iteration(value: number, supressEvents?: boolean): this;
+    iteration(value: number, suppressEvents?: boolean): this;
     /**
      * Gets the current iteration of the animation.
      *
@@ -147,6 +158,7 @@ declare namespace gsap.core {
      *
      * @returns {number} The iteration
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/iteration()
      */
     iteration(): number;
 
@@ -160,6 +172,7 @@ declare namespace gsap.core {
      *
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/kill()
      */
     kill(): this;
 
@@ -172,11 +185,12 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number} [atTime]
-     * @param {number} [supressEvents]
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/pause()
      */
-    pause(atTime?: number, supressEvents?: boolean): this;
+    pause(atTime?: number | string, suppressEvents?: boolean): this;
 
     /**
      * Sets the paused state of the animation.
@@ -188,6 +202,7 @@ declare namespace gsap.core {
      * @param {boolean} value
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/paused()
      */
     paused(value: boolean): this;
     /**
@@ -199,6 +214,7 @@ declare namespace gsap.core {
      *
      * @returns {boolean} The paused state
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/paused()
      */
     paused(): boolean;
 
@@ -211,11 +227,12 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number} [from]
-     * @param {boolean} [supressEvents]
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/play()
      */
-    play(from?: number | string | null, supressEvents?: boolean): this;
+    play(from?: number | string | null, suppressEvents?: boolean): this;
 
     /**
      * Sets the progress of the animation (between 0 and 1).
@@ -225,11 +242,12 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number} value
-     * @param {boolean} [supressEvents]
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/progress()
      */
-    progress(value: number, supressEvents?: boolean): this;
+    progress(value: number, suppressEvents?: boolean): this;
     /**
      * Gets the progress of the animation.
      *
@@ -239,10 +257,26 @@ declare namespace gsap.core {
      *
      * @returns {number} The progress
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/progress()
      */
     progress(): number;
     
     rawTime(wrapRepeats?: boolean): number;
+
+    /**
+     * Forces things to render at a certain time WITHOUT adjusting the animation's position in its parent timeline
+     *
+     * ```js
+     * anim.render(1);
+     * ```
+     *
+     * @param {number} totalTime
+     * @param {boolean} [suppressEvents]
+     * @param {boolean} [force]
+     * @returns {Animation} The animation
+     * @memberof Animation
+     */
+    render(totalTime: number, suppressEvents?: boolean, force?: boolean): this;
 
     /**
      * Sets the number of repeats of the animation.
@@ -301,11 +335,12 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number} [includeDelay]
-     * @param {boolean} [supressEvents]
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/restart()
      */
-    restart(includeDelay?: boolean, supressEvents?: boolean): this;
+    restart(includeDelay?: boolean, suppressEvents?: boolean): this;
 
     /**
      * Continues a paused animation in the direction it was headed (forwards or reverse), optionally from the given time.
@@ -316,11 +351,12 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number} [from]
-     * @param {boolean} [supressEvents]
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/resume()
      */
-    resume(from?: number | string | null, supressEvents?: boolean): this;
+    resume(from?: number | string, suppressEvents?: boolean): this;
 
     /**
      * Plays an animation in the reverse direction, optionally from the given time.
@@ -331,11 +367,12 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number} [from]
-     * @param {boolean} [supressEvents]
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/reverse()
      */
-    reverse(from?: number | string | null, supressEvents?: boolean): this;
+    reverse(from?: number | string, suppressEvents?: boolean): this;
 
     /**
      * Sets the reversed state of the animation.
@@ -347,6 +384,7 @@ declare namespace gsap.core {
      * @param {boolean} value
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/reversed()
      */
     reversed(value: boolean): this;
     /**
@@ -358,6 +396,7 @@ declare namespace gsap.core {
      *
      * @returns {boolean} The reversed state
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/reversed()
      */
     reversed(): boolean;
 
@@ -371,6 +410,7 @@ declare namespace gsap.core {
      * @param {number} value
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/startTime()
      */
     startTime(value: number): this;
     /**
@@ -382,6 +422,7 @@ declare namespace gsap.core {
      *
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/startTime()
      */
     startTime(): number;
 
@@ -393,7 +434,7 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number| string} time
-     * @param {boolean} suppressEvents
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The animation
      * @memberof Animation
      */
@@ -409,6 +450,7 @@ declare namespace gsap.core {
      * @param {Function} [onFulfilled]
      * @returns {Promise} A promise for the completion of the animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/then()
      */
     then(onFulfilled?: (result: Omit<this, "then">) => any): Promise<this>;
 
@@ -420,11 +462,12 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number} value
-     * @param {boolean} [supressEvents]
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/time()
      */
-    time(value: number, supressEvents?: boolean): this;
+    time(value: number, suppressEvents?: boolean): this;
     /**
      * Gets the current time of the given animation.
      *
@@ -434,6 +477,7 @@ declare namespace gsap.core {
      *
      * @returns {number} The current time
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/time()
      */
     time(): number;
 
@@ -447,6 +491,7 @@ declare namespace gsap.core {
      * @param {number} value
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/timeScale()
      */
     timeScale(value: number): this;
     /**
@@ -458,6 +503,7 @@ declare namespace gsap.core {
      *
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/timeScale()
      */
     timeScale(): number;
 
@@ -471,6 +517,7 @@ declare namespace gsap.core {
      * @param {number} value
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/totalDuration()
      */
     totalDuration(value: number): this;
     /**
@@ -482,6 +529,7 @@ declare namespace gsap.core {
      *
      * @returns {number} The total duration
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/totalDuration()
      */
     totalDuration(): number;
 
@@ -496,6 +544,7 @@ declare namespace gsap.core {
      * @param {boolean} suppressEvents
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/totalProgress()
      */
     totalProgress(value: number, suppressEvents?: boolean): this;
     /**
@@ -507,6 +556,7 @@ declare namespace gsap.core {
      *
      * @returns {number} The total progress
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/totalProgress()
      */
     totalProgress(): number;
 
@@ -518,11 +568,12 @@ declare namespace gsap.core {
      * ```
      *
      * @param {number} value
-     * @param {boolean} [supressEvents]
+     * @param {boolean} [suppressEvents]
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/totalTime()
      */
-    totalTime(value: number, supressEvents?: boolean): this;
+    totalTime(value: number, suppressEvents?: boolean): this;
     /**
      * Gets the total time (meaning where the playhead is, including repeats) of the given animation.
      *
@@ -532,6 +583,7 @@ declare namespace gsap.core {
      *
      * @returns {number} The total time
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/totalTime()
      */
     totalTime(): number;
 
@@ -546,6 +598,7 @@ declare namespace gsap.core {
      * @param {boolean} value
      * @returns {Animation} The animation
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/yoyo()
      */
     yoyo(value: boolean): this;
     /**
@@ -558,6 +611,7 @@ declare namespace gsap.core {
      *
      * @returns {boolean} The yoyo value
      * @memberof Animation
+     * @link https://greensock.com/docs/v3/GSAP/Tween/yoyo()
      */
     yoyo(): boolean;
   }
