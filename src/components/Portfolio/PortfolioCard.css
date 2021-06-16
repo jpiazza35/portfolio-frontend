@@ -1,0 +1,136 @@
+.portfolio-card {
+    width: 100%;
+    background: center;
+    background-size: cover;
+    height: 50vh;
+    position: relative;
+    overflow: hidden;
+    border: .1rem solid #ffffff;
+    font-family: 'Monserrat-regular';
+}
+
+
+.each-fade img {
+    width: 50vw;
+    height: auto;
+    position: absolute;
+    filter: blur(2px);
+    z-index: 50;
+}
+
+.each-fade {
+    display: flex;
+    height: 100%;
+}  
+
+
+
+.portfolio-card::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, .8);
+    z-index: 75;
+}
+
+.portfolio-card-textbox {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: 100;
+    color: #ffffff;
+    margin: 2rem;
+    margin-right: 40%;
+    font-size: 2rem;
+
+}
+
+.portfolio-card-textbox h1 {
+    font-size: 3rem;
+    margin-bottom: 2rem;
+    font-family: 'Monserrat-Bold'
+}
+
+.portfolio-button-zone {
+    margin-top: 2rem;
+}
+
+.portfolio-card-button {
+    width: 10rem;
+    height: 3rem;
+    color: #ffffff;
+    background: transparent;
+    border: .2rem solid #ffffff;
+    margin-right: 2rem; 
+    font-size: 1.5rem;
+    box-sizing: border-box;
+    position: relative;
+    font-family: 'Monserrat-semiBold';
+}
+
+.portfolio-card-button::after{
+    content: '';
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    position: absolute;
+    border: inherit;
+    box-sizing: border-box;
+    transition: all .5s;
+}
+
+.portfolio-card-button:hover::after{
+    scale: 1.5;
+    opacity: 0;
+    transition: all .5s;
+    cursor: pointer;
+}
+
+.card-pill{
+    min-width: 5rem;
+    display: inline-block;
+    background: transparent;
+    font-family: 'Monserrat-semiBold';
+    font-size: 1.1rem;
+    text-align: center;
+    margin: 0 1rem 1rem 0;
+    box-sizing: border-box;
+    padding: .2rem 1rem;
+    color: inherit;
+    border: .3rem solid #ffffff;
+    border-radius: 500px;
+    font-weight: 600;
+}
+
+@media screen and (max-width: 1400px) {
+    .each-fade img {
+        width: 90vw;
+    }
+
+    .portfolio-card-textbox{
+        font-size: 1.5rem;
+        margin-right: 15%;
+    }
+
+    .portfolio-card-textbox h1{
+        font-size: 2rem;
+    }
+
+}
+
+@media screen and (max-width: 760px) {
+    .each-fade img {
+        width: 130vw;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .each-fade img {
+        width: 200vh;
+    }
+}

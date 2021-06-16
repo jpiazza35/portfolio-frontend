@@ -1,0 +1,133 @@
+.about {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    height: 75vh;
+    background: #1c1b20;
+    font-family: 'Roboto', sans-serif;
+    z-index: 1000;
+    position: relative;
+    color: #ffffff;
+}
+
+.about-polygon {
+    z-index: -1;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 30%;
+    clip-path: polygon(0 0, 60% 0, 100% 100%, 0% 100%);
+    background: #eeeeee;
+    transform-origin: left;
+}
+
+.about-container {
+    display: flex;
+    width: 75%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.description {
+    width: 650px;
+    font-family: 'Monserrat-regular';
+}
+
+.container-photo {
+    width: 400px;
+}
+
+.about-profile-photo {
+    width: 100%;
+    border: 3rem solid #1c1b20;
+    border-radius: 50%;
+}
+
+.about-title {
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.about-title::after {
+    content: '';
+    position: absolute;
+    background-color: #F0D500;
+    width: 10%;
+    height: 5px;
+    bottom: 0;
+    left: 0;
+}
+
+.about-content {
+    font-size: 1.8rem;
+    margin: 2rem ;
+    font-family: 'Monserrat-regular';
+}
+
+.about-pills {
+    display: inline-block;
+    margin: 1rem;
+    box-sizing: border-box;
+    font-family: 'Monserrat-semiBold';
+    font-size: 1.5rem;
+    background-color: #403d4b;
+    padding: 1rem;
+    border-radius: 500px;
+    width: 10rem;
+    text-align: center;
+}
+
+.about-buttons button {
+    margin: 1rem;
+}
+
+@media screen and (max-width: 1400px) {
+    .about {
+        height: auto;
+        width: 100%;
+    }
+
+    .about-container {
+        margin: 7rem 0;
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .about-polygon {
+        clip-path: polygon(50% 100%, 0 0, 100% 0);
+        height: 40%;
+        width: 100%;
+        transform-origin: bottom;
+    }
+
+    .description {
+        width: 80%;
+    }
+
+    .about-title {
+        text-align: center;
+        transform-origin: bottom;
+
+    }
+    .about-title::after {
+        left: 45%;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .about-polygon {
+        height: 35%;
+    }
+    
+    .container-photo {
+        width: 375px;
+    }
+
+    .about-content {
+        font-size: 1.4rem;
+    }
+}

@@ -1,0 +1,238 @@
+.intro-container {
+    width: 100vw;
+    overflow: hidden;
+}
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+.main-nav {
+    width: 100%;
+    height: 10rem;
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo a {
+    font-family: 'Monserrat-regular';
+    font-size: 1.6rem;
+    color: #eee;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    outline: 2px solid #eee;
+    padding: 1rem 2rem;
+}
+
+.hamburger-menu {
+    height: 5rem;
+    width: 5rem;
+    background-color: #eee;
+    border-radius: .4rem;
+    box-shadow: .5rem .5rem 1rem #cacaca,
+        -.5rem -.5rem 1rem #fff;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+}
+
+.hamburger-menu:hover {
+    box-shadow: inset .5rem .5rem 1rem #cacaca,
+        inset -.5rem -.5rem 1rem #fff;
+}
+
+.bar {
+    width: 3rem;
+    height: 2px;
+    background-color: #333;
+    display: inline-block;
+    position: relative;
+    transition: background-color .5s;
+}
+
+.bar::after,
+.bar::before {
+    content: "";
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    background-color: #333;
+    transition: all .5s;
+}
+
+.bar::before {
+    top: -.8rem;
+}
+
+.bar::after {
+    top: .8rem;
+}
+
+.open .bar {
+    background-color: transparent;
+}
+
+.open .bar::before {
+    top: 0;
+    transform: rotate(135deg);
+}
+
+.open .bar::after {
+    top: 0;
+    transform: rotate(-135deg);
+}
+
+.nav-list {
+    width: 0;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #eee;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    box-shadow: -.5rem 0 1rem rgba(0, 0, 0, .1);
+    z-index: 1500;
+    transition: all .5s;
+}
+
+.open .nav-list {
+    width: 50rem;
+    transition: all 1s;
+}
+
+.nav-item {
+    display: none;
+    list-style: none;
+    border-bottom: 2px solid crimson;
+    opacity: 0;
+}
+
+.open .nav-list .nav-item{
+    opacity: 1;
+    transition: all 1s;
+    animation-delay: 2s;
+    display: block;
+}
+
+.nav-link {
+    text-decoration: nonde;
+    display: block;
+    color: #333;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    padding: .5rem;
+    transition: color .5s;
+}
+
+.nav-link:hover {
+    color: crimson;
+}
+
+.hero {
+    width: 100%;
+    height: 100vh;
+    background: url('../../assets/img/introBG.jpg') center no-repeat;
+    background-size: cover;
+    position: relative;
+
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: inherit;
+    height: inherit;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.hero-clipped {
+    width: 60%;
+    height: inherit;
+    background-color: #eee;
+    position: absolute;
+    top: 0;
+    right: 0;
+    clip-path: polygon(20% 0, 100% 0, 100% 100%, 0 100%);
+    transform-origin: right;
+    z-index: 10;
+}
+
+.hero-textbox {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-family: 'Lato', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.5;
+    color: #333;
+    padding: 1rem;
+    z-index: 20;
+}
+
+
+
+.sub-heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    letter-spacing: .5rem;
+}
+
+
+
+@media screen and (max-width: 1400px) {
+    .hero-clipped {
+        width: 100%;
+        height: 75vh;
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 60%);
+        transform-origin: top;
+    }
+
+    .logo a {
+        color: #333;
+        outline-color: #333;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .open .nav-list {
+        width: 30rem;
+        transition: all 1s;
+    }
+
+    .sub-heading {
+        font-size: 1.2rem;
+    }
+
+}
+
+@media screen and (max-width: 550px) {
+    .main-heading {
+        font-size: 2.5rem;
+    }
+
+    .sub-heading {
+        font-size: 1rem;
+    }
+
+    .cta-btn {
+        margin-top: 3rem;
+    }
+}
