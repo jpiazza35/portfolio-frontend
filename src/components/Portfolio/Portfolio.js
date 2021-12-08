@@ -28,7 +28,6 @@ const Portfolio = () => {
     var result = 1000 + Math.floor((4000 - 1000) * Math.random());
     return result
   }
-
   function animate () {
     if (!wasAnimated) {
       TweenMax.fromTo(polygon.current, 1, { scaleX: 0 }, { scaleX: 1 });
