@@ -1,7 +1,7 @@
 import React, { useRef, useState } from "react";
 import { useIntersection } from "react-use";
 import "./PortfolioCard.css";
-import { TweenMax } from "gsap";
+import { gsap } from "gsap";
 import { Fade } from "react-slideshow-image";
 import { FaGithub, FaLink } from 'react-icons/fa';
 
@@ -24,9 +24,9 @@ const PortfolioCard = ({ project, timeSlide }) => {
 
   function animate() {
     if(!wasAnimated){
-      TweenMax.fromTo(
+      gsap.fromTo(
         card.current,
-        1,
+        {duration:1},
         { yPercent: 40, opacity: 0 },
         { yPercent: 0, opacity: 1 }
         );
