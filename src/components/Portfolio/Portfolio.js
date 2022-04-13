@@ -34,7 +34,7 @@ const Portfolio = () => {
       gsap.fromTo(
         textbox.current,
       {duration:1},
-        { yPercent: 40, opacity: 0 },
+        { yPercent: 40, opacity: 1 },
         { delay: 1.3, yPercent: -50, opacity: 1 }
       );
       setWasAnimated(true);
