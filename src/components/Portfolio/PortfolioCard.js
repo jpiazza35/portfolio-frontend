@@ -27,7 +27,7 @@ const PortfolioCard = ({ project, timeSlide }) => {
       gsap.fromTo(
         card.current,
         {duration:1},
-        { yPercent: 40, opacity: 0 },
+        { yPercent: 40, opacity: 1 },
         { yPercent: 10, opacity: 1 }
         //{ yPercent: 0, opacity: 1 }
         );

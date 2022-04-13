@@ -2,10 +2,10 @@
     width: 100%;
     background: center;
     background-size: cover;
-    height: 50vh;
+    height: 35vh;
     position: relative;
     overflow: hidden;
-    border: .1rem solid #ffffff;
+    border: .2rem solid #ffffff;
     font-family: 'Monserrat-regular';
 }
 
@@ -32,7 +32,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, .8);
+    background: rgba(165, 151, 151, 0.8);
     z-index: 75;
 }
 
