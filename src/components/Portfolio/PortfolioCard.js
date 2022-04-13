@@ -28,7 +28,8 @@ const PortfolioCard = ({ project, timeSlide }) => {
         card.current,
         {duration:1},
         { yPercent: 40, opacity: 0 },
-        { yPercent: 0, opacity: 1 }
+        { yPercent: 10, opacity: 1 }
+        //{ yPercent: 0, opacity: 1 }
         );
         setWasAnimated(true);
     }
