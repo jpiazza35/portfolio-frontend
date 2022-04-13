@@ -2,7 +2,8 @@ import React, { useEffect, useState, useRef } from "react";
 import { useIntersection } from "react-use";
 import "./Portfolio.css";
 import axios from "axios";
-import { gsap } from "gsap";
+import {TweenMax } from "gsap";
+//import { gsap } from "gsap";
 import PortfolioCard from "./PortfolioCard";
 
 const Portfolio = () => {
@@ -30,10 +31,13 @@ const Portfolio = () => {
   }
   function animate () {
     if (!wasAnimated) {
-      gsap.fromTo(polygon.current, {duration:1}, { scaleX: 0 }, { scaleX: 1 });
-      gsap.fromTo(
+      TweenMax.fromTo(polygon.current, 1, { scaleX: 0 }, { scaleX: 1 });
+      TweenMax.fromTo(
+      //gsap.fromTo(polygon.current, {duration:1}, { scaleX: 0 }, { scaleX: 1 });
+      //gsap.fromTo(
         textbox.current,
-      {duration:1},
+        1,
+      //{duration:1},
         { yPercent: 40, opacity: 0 },
         { delay: 1.3, yPercent: -50, opacity: 1 }
       );
