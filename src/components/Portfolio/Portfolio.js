@@ -9,7 +9,8 @@ const Portfolio = () => {
   const [projects, setProjects] = useState([]);
   useEffect(() => {
     axios
-      .get("https://jp-portfolio-backend.herokuapp.com/portfolio")
+      .get("https://myportfoliobackendjosepiazza.herokuapp.com/portfolio")
+      //.get("https://jp-portfolio-backend.herokuapp.com/portfolio")
       .then((res) => {
         setProjects(res.data);
       });
