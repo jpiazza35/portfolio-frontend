@@ -18,7 +18,8 @@ const About = () => {
 
   useEffect(() => {
     axios
-      .get("https://jp-portfolio-backend.herokuapp.com/about")
+      .get("https://myportfoliobackendjosepiazza.herokuapp.com/about")
+      //.get("https://jp-portfolio-backend.herokuapp.com/about")
       .then((res) => {
         setInformation(res.data[0]);
       });
